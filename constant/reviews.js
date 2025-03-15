@@ -1,0 +1,39 @@
+export const reviews = [
+  {
+    src: "http://localhost:3000/images/review_1.jpg",
+  },
+  {
+    src: "http://localhost:3000/images/review_1.jpg",
+  },
+  {
+    src: "http://localhost:3000/images/review_1.jpg",
+  },
+  {
+    src: "http://localhost:3000/images/review_1.jpg",
+  },
+  {
+    src: "http://localhost:3000/images/review_1.jpg",
+  },
+  {
+    src: "http://localhost:3000/images/review_1.jpg",
+  },
+];
+
+export const socialLinks = [
+  //   {
+  //     icon: "x.png",
+  //     href: "#",
+  //   },
+  {
+    icon: "instagram.png",
+    href: "#",
+  },
+  {
+    icon: "facebook.png",
+    href: "#",
+  },
+  {
+    icon: "linkedin.png",
+    href: "#",
+  },
+];

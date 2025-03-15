@@ -1,26 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
 @import "tailwindcss";
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+a {
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.flex-evenly {
+  @apply flex justify-evenly items-center;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.justify-inherit {
+  justify-content: inherit;
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-bg {
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(
+      at 52% 99%,
+      hsl(12.45deg 93.08% 65.13%) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  height: 130vh;
+  width: 100%;
+  position: absolute;
+  filter: blur(100px) saturate(150%);
+  opacity: 0.25;
+}
+
+@keyframes scrolling {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-scroll {
+  animation: scrolling 1s linear infinite;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-align: center;
+  transform: rotate(180deg);
+}
+
+.swiper-pagination-bullet {
+  background: #ff5733 !important; /* Custom color for active dots */
 }
