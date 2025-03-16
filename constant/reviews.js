@@ -1,4 +1,4 @@
-export const reviews_ = [
+export const reviews = [
   {
     src: "http://localhost:3000/images/review_1.jpg",
   },
@@ -18,7 +18,7 @@ export const reviews_ = [
     src: "http://localhost:3000/images/review_1.jpg",
   },
 ];
-export const reviews = [
+export const reviews_ = [
   {
     src: "https://fiora-one.vercel.app/images/review_1.jpg",
   },

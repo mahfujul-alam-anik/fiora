@@ -16,11 +16,11 @@ import { socialLinks } from "@/constant/reviews";
 
 const Page = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
       <div className="page-bg"></div>
       <main className="max-w-[1280px] mx-auto relative z-50">
-        <header className="flex-between px-10 py-5 backdrop-blur-lg">
-          <div>
+        <header className="flex-between px-10 max-md:px-4 py-5 pt-7 backdrop-blur-lg">
+          <div className="flex-center gap-3">
             <Image
               src="/images/fiora-logo.png"
               alt="Fiora"
@@ -28,6 +28,7 @@ const Page = () => {
               height={80}
               className="object-contain rounded-full"
             />
+            <h1 className="text-slate-900 font-bold text-3xl">Fiora</h1>
           </div>
           <div>
             <Link
@@ -38,21 +39,21 @@ const Page = () => {
             </Link>
           </div>
         </header>
-        <div className="px-10">
-          <section className="flex h-[70vh] items-center ">
+        <div className="px-10 max-md:px-4">
+          <section className="flex h-[70vh] items-center max-md:flex-col">
             <div className="col-flex gap-2 relative">
-              <h2 className="text-6xl text-[#6b0609] font-bold pb-2">
+              <h2 className="text-6xl text-[#6b0609] font-bold pb-2 max-md:text-4xl">
                 2 PCS Combo
               </h2>
-              <h1 className="text-[50px] font-bold">
+              <h1 className="text-[50px] max-md:text-3xl font-bold">
                 <span className="text-blue-700">Premium</span>
                 <span className="text-slate-800 px-3">|</span>
-                <span className="text-orange-500">Polo T-shirt</span>
+                <span className="text-orange-500">Polo Shirt</span>
               </h1>
-              <h4 className="text-slate-900 capitalize text-[33px] font-medium">
+              <h4 className="text-slate-900 capitalize text-[33px] max-md:text-base font-medium">
                 100% soft cotton & comfortable feel
               </h4>
-              <div className="mt-6">
+              <div className="mt-6 max-md:hidden">
                 <Link
                   href="#shopNow"
                   className="btn w-[200px] h-[50px] flex-center gap-3 cursor-pointer bg-linear-to-tl from-[#6b0609] to-fuchsia-500 text-white rounded-full hover:bg-linear-to-bl hover:text-orange-400 transition-all duration-300"
@@ -61,47 +62,64 @@ const Page = () => {
                   <p>Shop Now</p>
                 </Link>
               </div>
-              <div className="absolute right-0 -bottom-[100px]">
+              <div className="absolute right-0 -bottom-[100px] max-md:hidden">
                 <ScrollIndicator />
               </div>
             </div>
 
-            <div className="relative flex items-end justify-end">
+            <div className="relative flex items-end justify-end max-md:w-full">
               <Image
                 src="/images/t-shirt-white.png"
                 alt="T-shirt"
                 width={300}
                 height={300}
-                className="object-contain absolute left-[200px] bottom-0"
+                className="object-contain max-md:w-[220px] absolute left-[200px] max-md:left-[-13px] bottom-0"
               />
               <Image
                 src="/images/t-shirt-black.png"
                 alt="T-shirt"
                 width={400}
                 height={400}
-                className="object-contain "
+                className="object-contain max-md:w-[300px]"
               />
             </div>
           </section>
-          <section className="pt-[160px]">
+
+          <div className="mt-8 hidden max-md:block max-md:flex-center">
+            <Link
+              href="#shopNow"
+              className="btn w-[200px] h-[50px] flex-center gap-3 cursor-pointer bg-linear-to-tl from-[#6b0609] to-fuchsia-500 text-white rounded-full hover:bg-linear-to-bl hover:text-orange-400 transition-all duration-300 max-md:m-auto"
+            >
+              <HiOutlineShoppingBag className="text-[20px]" />
+              <p>Shop Now</p>
+            </Link>
+          </div>
+
+          <section className="pt-[160px] max-md:pt-10">
             <div className="">
-              <h1 className="text-[#6b0609] text-[40px] font-bold text-center">
+              <h1 className="text-[#6b0609] text-[40px] max-md:text-3xl font-bold text-center">
                 ২ টি সলিড ব্র্যান্ড টি-শার্টের কম্বো পাচ্ছেন মাত্র
-                <span className="block">১৪৯০ টাকায়</span>
+                <span className="block max-md:inline">{` ১৪৯৯ টাকায়`}</span>
               </h1>
-              <h2 className="text-orange-600 text-center text-2xl font-bold mt-4 px-5">
+              <h2 className="text-orange-600 text-center text-2xl max-md:text-base font-bold mt-4 px-5">
                 এই টি-শার্টগুলো লোকাল টি-শার্টের মতো পরনে হার্শ হবে না, বব্লিন
                 উঠবে না, দীর্ঘদিন ব্যবহারের উপযোগী, পড়তে খুবই আরামদায়ক, একই সাথে
                 দেখতেও বেশ সুন্দর।
               </h2>
             </div>
 
-            <div className="mx-auto border-2 border-dashed flex-between mt-16 text-slate-900 rounded-lg font-bold border-slate-500 bg-slate-200/20">
-              <div className="flex-col gap-2 border-r-2 border-dashed border-slate-500">
+            <div className="mx-auto border-2 border-dashed flex-between mt-16 max-md:mt-10 text-slate-900 rounded-lg font-bold border-slate-500 bg-slate-200/20 max-md:flex-col">
+              <div className="h-full max-md:flex items-center justify-center hidden px-2 py-4 border-b-2 border-dashed">
+                <h1 className="text-[23px] text-[#6b0609] font-bold text-center">
+                  আমাদের টিশার্টের কোয়ালিটি
+                </h1>
+              </div>
+
+              <div className="flex-col gap-2 border-r-2 max-md:border-r-0 border-dashed border-slate-500">
                 {shirt_quality_left.map((quality, index) => (
                   <div
                     key={index}
-                    className="flex gap-3 items-center border-dashed border-b-2 last:border-0 p-4 px-6 border-slate-500"
+                    className="flex gap-3 items-center border-dashed border-b-2 last:border-0 p-4 px-6 max-md:px-4 border-slate-500"
                   >
                     <div className="w-[30px] h-[30px] bg-blue-500 rounded-full flex-center">
                       <FaRegCheckCircle className="text-lg text-slate-100" />
@@ -111,17 +129,17 @@ const Page = () => {
                 ))}
               </div>
 
-              <div className="h-full flex items-center justify-center">
+              <div className="h-full flex items-center justify-center max-md:hidden">
                 <h1 className="vertical-text text-[23px] text-[#6b0609] font-bold">
                   আমাদের টিশার্টের কোয়ালিটি
                 </h1>
               </div>
 
-              <div className="flex-col gap-2 border-l-2 border-dashed border-slate-500">
+              <div className="flex-col gap-2 border-l-2 max-md:border-l-0 max-md:border-t-2 border-dashed border-slate-500">
                 {shirt_quality_right.map((quality, index) => (
                   <div
                     key={index}
-                    className="flex gap-3 items-center border-dashed border-b-2 last:border-0 p-4 px-6 border-slate-500"
+                    className="flex gap-3 items-center border-dashed border-b-2 last:border-0 p-4 px-6 border-slate-500 max-md:px-4"
                   >
                     <div className="w-[30px] h-[30px] bg-blue-500 rounded-full flex-center">
                       <FaRegCheckCircle className="text-lg text-slate-100" />
@@ -137,46 +155,46 @@ const Page = () => {
             </div>
           </section>
 
-          <section className="pt-[100px]">
-            <h1 className="text-[#6b0609] text-[40px] font-bold text-center">
+          <section className="pt-[100px] max-md:pt-14">
+            <h1 className="text-[#6b0609] text-[40px] max-md:text-3xl font-bold text-center">
               কাস্টমার ফিডব্যাক
             </h1>
             <ReviewSlider />
           </section>
 
-          <section className="pt-10">
+          <section className="pt-10 max-md:pt-4">
             <div>
               <Image
                 width={500}
                 height={500}
                 src={"/images/size-chart.png"}
                 alt={`Size Chart`}
-                className="rounded-2xl shadow-lg w-[700px] h-auto object-contain border-2 border-slate-200 mx-auto"
+                className="rounded-2xl shadow-lg w-[700px] max-md:w-full h-auto object-contain border-2 border-slate-200 mx-auto"
               />
             </div>
           </section>
 
-          <section className="pt-10">
+          <section className="pt-10 max-md:pt-5">
             <div className="bg-purple-300 py-9 rounded-2xl">
-              <h1 className="text-[#6b0609] text-4xl font-bold text-center line-through">
+              <h1 className="text-[#6b0609] text-4xl max-md:text-3xl font-bold text-center line-through">
                 রেগুলার প্রাইস ২১০০ টাকা
               </h1>
-              <h2 className="text-orange-600 text-center text-4xl font-bold mt-3">
+              <h2 className="text-[#dd5700] text-center text-4xl max-md:text-4xl font-bold mt-3">
                 ঈদ স্পেশাল অফার প্রাইস মাত্র ১৪৯৯ টাকা
               </h2>
             </div>
           </section>
 
           <section
-            className="bg-purple-200 rounded-2xl mt-14 py-10 px-12"
+            className="bg-purple-200 rounded-2xl mt-14 py-10 px-12 max-md:px-4 max-md:mt-5"
             id="shopNow"
           >
             <OrderForm />
           </section>
 
-          <footer className="border-t border-slate-300 mt-[80px] pb-5">
+          <footer className="border-t border-slate-300 mt-[80px] max-md:mt-14 pb-5">
             <div className="m-auto flex-center">
-              <ul className="flex items-center gap-6 mt-10">
+              <ul className="flex items-center gap-6 mt-10 max-md:mt-6">
                 {socialLinks.map((item, index) => (
                   <li key={index} className="hover:scale-125 duration-300">
                     <Link href={item.href}>

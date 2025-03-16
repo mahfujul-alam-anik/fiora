@@ -21,7 +21,7 @@ const OrderForm = () => {
   };
 
   // Validate and submit
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const newErrors = {};
 
     if (!formData.fullName.trim()) newErrors.fullName = "Full name is required";
@@ -35,21 +35,35 @@ const OrderForm = () => {
       return;
     }
 
-    // Final billing object
-    console.log("Billing Details:", formData);
-    alert("Billing details submitted successfully!");
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert("Billing details sent to your email!");
+      } else {
+        alert("Failed to send email: " + result.message);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("An error occurred while sending email.");
+    }
   };
 
   return (
     <div>
       <div className="flex-center">
-        <h1 className="text-[#6b0609] text-2xl font-bold text-center px-7 py-3 border-2 border-[#6b0609] rounded-tl-2xl rounded-br-2xl text-wrap inline m-auto">
+        <h1 className="text-[#6b0609] text-2xl font-bold text-center px-7 max-md:px-4 py-3 border-2 border-[#6b0609] rounded-tl-2xl rounded-br-2xl text-wrap inline m-auto">
           অর্ডার করতে নিচের ফর্মটি পূরণ করুন
         </h1>
       </div>
 
-      <div className="flex justify-between mt-10">
-        <div className="w-[500px]">
+      <div className="flex justify-between mt-10 max-md:flex-col">
+        <div className="w-[500px] max-md:w-full">
           <h2 className="text-2xl text-orange-500 font-semibold mb-6">
             Billing Details
           </h2>
@@ -128,7 +142,7 @@ const OrderForm = () => {
           </div>
         </div>
 
-        <div className="w-lg">
+        <div className="w-lg max-md:w-full max-md:pt-8">
           <h2 className="text-2xl text-orange-500 font-semibold mb-6">
             Your order
           </h2>

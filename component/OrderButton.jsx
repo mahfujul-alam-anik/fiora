@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const OrderButton = () => {
   return (
-    <div className="">
+    <div className="max-md:w-full">
       <Link
         href="#shopNow"
-        className="btn w-[400px] h-[60px] flex-center gap-3 cursor-pointer bg-gradient-to-tl from-[#6b0609] to-fuchsia-500 text-white rounded-lg hover:bg-gradient-to-bl hover:text-slate-200 transition-all duration-300"
+        className="btn w-[400px] max-md:w-full h-[60px] flex-center gap-3 cursor-pointer bg-gradient-to-tl from-[#6b0609] to-fuchsia-500 text-white rounded-lg hover:bg-gradient-to-bl hover:text-slate-200 transition-all duration-300"
       >
         <HiOutlineShoppingBag className="text-[20px]" />
         <p>অর্ডার করতে চাই</p>
